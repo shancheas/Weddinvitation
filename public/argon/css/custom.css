@@ -1,0 +1,93 @@
+.bg-gradient-primary
+{
+    background: linear-gradient(180deg, rgba(255, 182, 185, 0.7) 3.12%, rgba(243, 246, 250, 0) 78.65%), url('../img/brand/main-bg.png') !important;
+}
+
+.bg-gradient-secondary
+{
+    background:  url('../img/brand/bg-2.png') !important;
+}
+
+.bg-footer
+{
+    background-color: rgba(135, 133, 162, 0.32) !important;
+}
+
+.navbar-horizontal .navbar-brand img
+{
+    height: 120px;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: #3A4750;
+    font-weight: bold;
+}
+
+.btn-round-lg{
+    border-radius: 22.5px;
+}
+.btn-round{
+    border-radius: 17px;
+}
+.btn-round-sm{
+    border-radius: 15px;
+}
+.btn-round-xs{
+    border-radius: 11px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.btn-round-lg{
+    border-radius: 22.5px;
+}
+.btn-round{
+    border-radius: 17px;
+}
+.btn-round-sm{
+    border-radius: 15px;
+}
+.btn-round-xs{
+    border-radius: 11px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-pink
+{
+    color: #fff;
+    border-color: #F67280;
+    background-color: #F67280;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+}
+.btn-pink:hover
+{
+    color: #fff;
+    border-color: #F67280;
+    background-color: #F67280;
+}
+.btn-pink:focus,
+.btn-pink.focus
+{
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08), 0 0 0 0 rgba(245, 54, 92, .5);
+}
+.btn-pink.disabled,
+.btn-pink:disabled
+{
+    color: #fff;
+    border-color: #F67280;
+    background-color: #F67280;
+}
+.btn-pink:not(:disabled):not(.disabled):active,
+.btn-pink:not(:disabled):not(.disabled).active,
+.show > .btn-pink.dropdown-toggle
+{
+    color: #fff;
+    border-color: #F67280;
+    background-color: #ec0c38;
+}
+.btn-pink:not(:disabled):not(.disabled):active:focus,
+.btn-pink:not(:disabled):not(.disabled).active:focus,
+.show > .btn-pink.dropdown-toggle:focus
+{
+    box-shadow: none, 0 0 0 0 rgba(245, 54, 92, .5);
+}
+
