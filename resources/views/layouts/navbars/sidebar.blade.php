@@ -5,8 +5,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <!-- Brand -->
-        <a class="navbar-brand pt-0" href="{{ route('home') }}">
-            <img src="{{ asset('argon') }}/img/brand/blue.png" class="navbar-brand-img" alt="...">
+        <a class="navbar-brand pt-0" href="{{ url('/') }}">
+            <img src="{{ asset('argon') }}/img/brand/logo.png" />
         </a>
         <!-- User -->
         <ul class="nav align-items-center d-md-none">
@@ -83,6 +83,7 @@
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
                     </a>
                 </li>
+                {{--
                 <li class="nav-item">
                     <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="fab fa-laravel" style="color: #f4645f;"></i>
@@ -130,7 +131,9 @@
                         <i class="ni ni-cloud-download-95"></i> Upgrade to PRO
                     </a>
                 </li>
+                --}}
             </ul>
+            {{--
             <!-- Divider -->
             <hr class="my-3">
             <!-- Heading -->
@@ -153,6 +156,7 @@
                     </a>
                 </li>
             </ul>
+            --}}
         </div>
     </div>
 </nav>
