@@ -24,17 +24,21 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
-            @include('layouts.navbars.sidebar')
+
+            <div class="main-content">
+                @include('layouts.navbars.navs.auth')
+                @yield('content')
+            </div>
         @endauth
 
-        <div class="main-content">
-            @include('layouts.navbars.navbar')
-            @yield('content')
-        </div>
-
         @guest()
-            @include('layouts.footers.guest')
+            <div class="main-content">
+                @include('layouts.navbars.navs.guest')
+                @yield('content')
+            </div>
         @endguest
+
+        @include('layouts.footers.guest')
 
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
