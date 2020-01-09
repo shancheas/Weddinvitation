@@ -10,7 +10,7 @@
                         <h1>{{ __('Dengan Cara Kekinian.') }}</h1>
 
                         @auth()
-                            <a class="btn btn-lg btn-round-lg btn-pink" href="#">
+                            <a class="btn btn-lg btn-round-lg btn-pink" href="{{ route('templates') }}">
                                 <span class="nav-link-inner--text">{{ __('Buat Sekarang') }}</span>
                             </a>
                         @endguest

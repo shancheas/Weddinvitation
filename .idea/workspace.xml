@@ -2,29 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01e6ac63-7e66-47b7-96f5-704c7aac38f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/dashboard.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/template.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/users/invitation/templates.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artisan" beforeDir="false" afterPath="$PROJECT_DIR$/artisan" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/headers/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/headers/guest.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/auth.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/auth.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/guest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/navs/guest.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbars/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/argon/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/argon/css/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
@@ -135,7 +124,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="/usr/bin/php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../soundkit" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -156,6 +145,7 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="PHPUnit.phpunit.xml" />
       <item itemvalue="Shell Script.PHP" />
     </list>
   </component>
@@ -183,7 +173,12 @@
       <updated>1575513660287</updated>
       <workItem from="1575513661696" duration="5906000" />
       <workItem from="1577311370285" duration="1305000" />
-      <workItem from="1577346726333" duration="5655000" />
+      <workItem from="1577346726333" duration="7454000" />
+      <workItem from="1577464700403" duration="34000" />
+      <workItem from="1578067182335" duration="367000" />
+      <workItem from="1578068741419" duration="3043000" />
+      <workItem from="1578361487054" duration="11000" />
+      <workItem from="1578551936737" duration="4942000" />
     </task>
     <servers />
   </component>
@@ -195,22 +190,30 @@
       <screen x="43" y="27" width="1877" height="1053" />
     </state>
     <state x="439" y="210" key="#com.intellij.execution.impl.EditConfigurationsDialog/43.27.1877.1053@43.27.1877.1053" timestamp="1577346926375" />
-    <state x="764" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1577346914397">
+    <state x="764" y="310" width="424" height="484" key="FileChooserDialogImpl" timestamp="1577464731726">
       <screen x="43" y="27" width="1877" height="1053" />
     </state>
-    <state x="764" y="310" width="424" height="484" key="FileChooserDialogImpl/43.27.1877.1053@43.27.1877.1053" timestamp="1577346914397" />
+    <state x="764" y="310" width="424" height="484" key="FileChooserDialogImpl/43.27.1877.1053@43.27.1877.1053" timestamp="1577464731726" />
+    <state x="777" y="478" width="399" height="149" key="NewPhpFileDialog" timestamp="1578559204921">
+      <screen x="43" y="27" width="1877" height="1053" />
+    </state>
+    <state x="777" y="478" width="399" height="149" key="NewPhpFileDialog/43.27.1877.1053@43.27.1877.1053" timestamp="1578559204921" />
     <state x="470" y="188" key="SettingsEditor" timestamp="1577311549912">
       <screen x="43" y="27" width="1877" height="1053" />
     </state>
     <state x="470" y="188" key="SettingsEditor/43.27.1877.1053@43.27.1877.1053" timestamp="1577311549912" />
-    <state x="637" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1577346727466">
+    <state x="637" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1578361489890">
       <screen x="43" y="27" width="1877" height="1053" />
     </state>
-    <state x="637" y="380" key="com.intellij.ide.util.TipDialog/43.27.1877.1053@43.27.1877.1053" timestamp="1577346727466" />
-    <state x="626" y="149" width="710" height="807" key="find.popup" timestamp="1577353091998">
+    <state x="637" y="380" key="com.intellij.ide.util.TipDialog/43.27.1877.1053@43.27.1877.1053" timestamp="1578361489890" />
+    <state x="749" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578551956405">
       <screen x="43" y="27" width="1877" height="1053" />
     </state>
-    <state x="626" y="149" width="710" height="807" key="find.popup/43.27.1877.1053@43.27.1877.1053" timestamp="1577353091998" />
+    <state x="749" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/43.27.1877.1053@43.27.1877.1053" timestamp="1578551956405" />
+    <state x="626" y="149" width="710" height="807" key="find.popup" timestamp="1578561599616">
+      <screen x="43" y="27" width="1877" height="1053" />
+    </state>
+    <state x="626" y="149" width="710" height="807" key="find.popup/43.27.1877.1053@43.27.1877.1053" timestamp="1578561599616" />
     <state x="644" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1577352589281">
       <screen x="43" y="27" width="1877" height="1053" />
     </state>

@@ -1,11 +1,15 @@
+.bg-default {
+    background: linear-gradient(180deg, rgba(255, 182, 185, 0.7) 3.12%, rgba(243, 246, 250, 0) 78.65%), url('../img/brand/main-texture.png') !important;
+}
+
 .bg-gradient-primary
 {
-    background: linear-gradient(180deg, rgba(255, 182, 185, 0.7) 3.12%, rgba(243, 246, 250, 0) 78.65%), url('../img/brand/main-bg.png') !important;
+    background: linear-gradient(180deg, rgba(255, 182, 185, 0.7) 3.12%, rgba(243, 246, 250, 0) 78.65%), url('../img/brand/main-bg.png') 0/cover no-repeat !important;
 }
 
 .bg-gradient-secondary
 {
-    background:  url('../img/brand/bg-2.png') !important;
+    background:  url('../img/brand/bg-2.png') 0/cover no-repeat !important;
 }
 
 .bg-footer
@@ -96,7 +100,7 @@
     padding-top: 80px;
     padding-bottom: 80px;
     background-color: #FBE1B6;
-    overflow: hidden; 
+    overflow: hidden;
     text-align: center;
 }
 
@@ -152,7 +156,7 @@
     border-left: none;
     border-top: none;
     border-right: none;
-    
+
 }
 
 #feedback-name:focus {
