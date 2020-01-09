@@ -91,3 +91,70 @@
     box-shadow: none, 0 0 0 0 rgba(245, 54, 92, .5);
 }
 
+.feedback-container {
+    margin: 0px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #FBE1B6;
+    overflow: hidden; 
+    text-align: center;
+}
+
+.feedback-container div span {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    padding: 5px 10px
+}
+
+.feedback-button {
+    width: 100px;
+    height: 32px;
+    margin: 16px;
+    border-radius: 20px;
+    background-color: #FFECDA;
+    border: 0px solid transparent;
+}
+
+.feedback-button-maker {
+    width: 200px;
+    height: 32px;
+    margin: 16px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border: 0px solid transparent;
+}
+
+.feedback-container div h2 {
+    text-align: center;
+    line-height: 32px;
+    font-weight: bold;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+    color: #000;
+}
+
+.feedback-container div textarea {
+    background-color: #FBAC91;
+    color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 16px;
+}
+
+#feedback-name {
+    width: 200px;
+    background-color: #FBE1B6;
+    padding-bottom: 8px;
+    border-bottom: 1px solid black;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    
+}
+
+#feedback-name:focus {
+    outline: none;
+}
