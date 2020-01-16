@@ -16,6 +16,9 @@
         <link href="{{ asset('argon') }}/vendor/nucleo/css/nucleo.css" rel="stylesheet">
         <link href="{{ asset('argon') }}/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
         <!-- Argon CSS -->
+        <link type="text/css" href="{{ asset('argon') }}/vendor/owlCarousel/owl.carousel.min.css" rel="stylesheet">
+        <link type="text/css" href="{{ asset('argon') }}/vendor/owlCarousel/owl.theme.default.min.css" rel="stylesheet">
+        <!-- Vendor CSS -->
         <link type="text/css" href="{{ asset('argon') }}/css/argon.css?v=1.0.0" rel="stylesheet">
         <link type="text/css" href="{{ asset('argon') }}/css/custom.css" rel="stylesheet">
     </head>
@@ -38,12 +41,13 @@
             </div>
         @endguest
 
-        
+
         @include('layouts.footers.guest')
         <!-- @include('layouts.footers.feedback') -->
 
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="{{ asset('argon') }}/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
         @stack('js')
 

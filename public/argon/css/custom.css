@@ -162,3 +162,9 @@
 #feedback-name:focus {
     outline: none;
 }
+
+.templates-img {
+    display: unset !important;
+    width: unset !important;
+    cursor: pointer;
+}
