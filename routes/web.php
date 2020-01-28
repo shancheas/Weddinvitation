@@ -29,5 +29,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('templates', function () {
         return view('users/invitation/templates');
     })->name('templates');
+
+    Route::get('templates_one', function () {
+        return view('users/invitation/theme_one');
+    })->name('templates');
 });
 
