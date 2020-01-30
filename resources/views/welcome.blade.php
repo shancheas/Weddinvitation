@@ -39,4 +39,6 @@
         </div>
     </div>
 
+    @include('layouts.homepage.invitation_sample')
+
 @endsection
