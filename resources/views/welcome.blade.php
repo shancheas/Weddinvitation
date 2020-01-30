@@ -40,5 +40,6 @@
     </div>
 
     @include('layouts.homepage.invitation_sample')
+    @include('layouts.homepage.testimonial')
 
 @endsection
