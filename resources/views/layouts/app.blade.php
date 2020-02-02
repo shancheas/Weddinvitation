@@ -30,7 +30,7 @@
             @include('layouts.navbars.sidebar')
         @endauth
 
-        <div class="main-content bg-gradient-primary">
+        <div class="main-content">
             @include('layouts.navbars.navbar')
             @yield('content')
         </div>
