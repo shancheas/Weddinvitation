@@ -173,3 +173,8 @@
     width: unset !important;
     cursor: pointer;
 }
+
+.card-img-cover {
+    height: 250px;
+    overflow: hidden;
+}

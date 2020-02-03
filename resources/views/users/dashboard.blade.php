@@ -18,7 +18,8 @@
                         <div class="card-header-tabs">
                             <div class="text-right mb--3 mr-2">
                                 <div class="dropdown">
-                                    <a class="btn btn-sm btn-icon-only text-dark" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="btn btn-sm btn-icon-only text-dark" href="#" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-v"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
@@ -38,8 +39,10 @@
                                 </div>
                             </div>
                         </div>
-                        <img src="https://www.stylishwedd.com/media/iwd_video/img/resized/650x650/5d245c8da4709.jpg"
-                             class="card-img-top" alt="first">
+                        <div class="card-img-cover">
+                            <img src="{{ asset('argon') }}/img/brand/sample.png"
+                                 class="card-img-top" alt="first">
+                        </div>
                         <div class="card-blockquote">
                             <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95"
                                  class="svg-bg">
@@ -62,7 +65,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6">
                 <h1>Hai Irfan</h1>
-                <p class="text-lead">Sepertinya kamu belum mempunyai undangan sama sekali. Yuk buat undanganmu sekarang.</p>
+                <p class="text-lead">Sepertinya kamu belum mempunyai undangan sama sekali. Yuk buat undanganmu
+                    sekarang.</p>
                 <a class="btn btn-lg btn-round-lg btn-pink" href="{{ route('templates') }}">
                     <span class="nav-link-inner--text">{{ __('Buat Undangan') }}</span>
                 </a>
