@@ -21,6 +21,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        return view('users/dashboard');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function details()
+    {
+        return view('users/invitation/details');
     }
 }

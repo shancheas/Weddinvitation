@@ -7,6 +7,11 @@
     background: linear-gradient(180deg, rgba(255, 182, 185, 0.7) 3.12%, rgba(243, 246, 250, 0) 78.65%), url('../img/brand/main-bg.png') 0/cover no-repeat !important;
 }
 
+.bg-gradient-main
+{
+    background: linear-gradient(180deg, rgba(255, 182, 185, 0.7) 3.12%, rgba(243, 246, 250, 0) 78.65%) !important;
+}
+
 .bg-gradient-secondary
 {
     background:  url('../img/brand/bg-2.png') 0/cover no-repeat !important;
@@ -167,4 +172,9 @@
     display: unset !important;
     width: unset !important;
     cursor: pointer;
+}
+
+.card-img-cover {
+    height: 250px;
+    overflow: hidden;
 }
