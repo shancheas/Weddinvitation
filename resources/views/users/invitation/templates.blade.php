@@ -97,6 +97,9 @@
                         <div class="pl-lg-4">
                             <div id="map-canvas" class="map-canvas" data-lat="-6.8880563" data-lng="107.6291544" style="height: 400px;"></div>
                         </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-pink btn-round-lg my-4">{{ __('Simpan') }}</button>
+                        </div>
                     </form>
                 </div>
             </div>
