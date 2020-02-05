@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/feedback', 'FeedbackController@index')->name('feedback');
 
@@ -26,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 
+    Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/details', 'HomeController@details')->name('details');
     Route::get('/editor', 'HomeController@editor')->name('editor');
 
@@ -35,6 +35,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('templates_one', function () {
         return view('users/invitation/theme_one');
-    })->name('templates');
+    })->name('themes');
 });
 

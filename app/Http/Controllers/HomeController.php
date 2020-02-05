@@ -2,16 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Entity\Invitation;
+
 class HomeController extends Controller
 {
+    private $invitation;
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Invitation $invitation)
     {
         $this->middleware('auth');
+        $this->invitation = $invitation;
     }
 
     /**
@@ -21,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('users/dashboard');
+        $invitation = $this->invitation->all();
+        return view('users/dashboard', compact('invitation'));
     }
 
     /**

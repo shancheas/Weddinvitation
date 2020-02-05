@@ -4,9 +4,10 @@
 
 <div class="container-fluid bg-gradient-main">
     @include('users.partials.welcome_header')
+    @if($invitation->count() > 0)
     <div class="row mb-3">
         <div class="col-lg-8">
-            <h2 class="display-3">Undangan-undangan Keren Irfan</h2>
+            <h2 class="display-3">Undangan-undangan Keren {{ auth()->user()->name }}</h2>
         </div>
     </div>
     <div class="row justify-content-center">
@@ -60,11 +61,11 @@
             </div>
         </div>
     </div>
-    {{--
+    @else
     <div class="header-body text-center mb-7">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-6">
-                <h1>Hai Irfan</h1>
+                <h1>Hai {{ auth()->user()->name }}</h1>
                 <p class="text-lead">Sepertinya kamu belum mempunyai undangan sama sekali. Yuk buat undanganmu
                     sekarang.</p>
                 <a class="btn btn-lg btn-round-lg btn-pink" href="{{ route('templates') }}">
@@ -73,6 +74,6 @@
             </div>
         </div>
     </div>
-    --}}
+    @endif
 </div>
 @endsection
