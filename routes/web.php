@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 
     Route::get('/details', 'HomeController@details')->name('details');
+    Route::get('/editor', 'HomeController@editor')->name('editor');
 
     Route::get('templates', function () {
         return view('users/invitation/templates');

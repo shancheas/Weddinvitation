@@ -3,7 +3,7 @@
 @section('content')
 @include('users.partials.details_header')
 
-<div class="container-fluid bg-gradient-main mt--7">
+<div class="container-fluid mt--7">
     <div class="row mb-4">
         <div class="col-lg-6">
             <div class="card card-stats mb-4 mb-xl-0">
