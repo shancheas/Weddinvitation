@@ -33,4 +33,14 @@ class HomeController extends Controller
     {
         return view('users/invitation/details');
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function editor()
+    {
+        return view('editor/editor');
+    }
 }
