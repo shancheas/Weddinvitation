@@ -19,7 +19,7 @@
                         <a class="dropdown-item" :href="`/editor/${data.id}`">
                             <i class="ni ni-palette text-success"></i> Ubah
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="#" @click="modals.url = true">
                             <i class="ni ni-send text-blue"></i> Bagikan
                         </a>
                         <a class="dropdown-item" href="#" @click="modals.deleteAlert = true">
@@ -41,7 +41,7 @@
                          class="fill-default"></polygon>
             </svg>
             <h3 class="font-weight-bold">{{ getBrideNames }}</h3>
-            <a href="#" class="btn btn-primary btn-sm">
+            <a :href="getInvitationUri" class="btn btn-primary btn-sm" target="_blank">
                 <i class="fa fa-eye"></i> Lihat
             </a>
             <a class="btn btn-icon btn-2 btn-danger btn-sm" v-bind:href="`details/${data.id}`">
@@ -66,6 +66,14 @@
                 </base-button>
             </template>
         </modal>
+        <modal :show.sync="modals.url">
+            <div>
+                <base-input placeholder="url" id="inv-url" :value="getInvitationUri" addon-right-icon="fas fa-link"></base-input>
+            </div>
+            <template slot="footer">
+                <base-button type="secondary" @click="modals.url = false">Copy</base-button>
+            </template>
+        </modal>
     </div>
 </template>
 
@@ -80,12 +88,14 @@
                 type: String,
                 description: "Image poster for card"
             },
-            data: Object
+            data: Object,
+            url: String
         },
         data() {
             return {
                 modals: {
-                    deleteAlert: false
+                    deleteAlert: false,
+                    url: false
                 },
                 brideNames: ''
             }
@@ -93,6 +103,9 @@
         computed: {
             getBrideNames() {
                 return `${this.data.bridegroom} & ${this.data.bride}`
+            },
+            getInvitationUri() {
+                return `${this.url}/invitation/${this.data.bridegroom.toLowerCase()}-dan-${this.data.bride.toLocaleLowerCase()}`
             }
         },
         methods: {
@@ -103,6 +116,13 @@
                     console.log(response)
                     this.$emit('onDelete', invitationId)
                 })
+            },
+            copyTextToClipboard() {
+                const copyText = document.getElementById("inv-url");
+                copyText.select();
+                copyText.setSelectionRange(0, 99999);
+                document.execCommand("copy");
+                this.modals.url = false;
             }
         },
         components: {

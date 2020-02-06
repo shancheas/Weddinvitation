@@ -31,6 +31,7 @@
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
+            <input type="hidden" value="{{ $invitation->id }}" id="inv-id" />
             @include('editor.sidebar')
         @endauth
 

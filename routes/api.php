@@ -23,4 +23,5 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/invitation/{id}', 'InvitationController@show');
 Route::post('/invitation/content/{id}', 'InvitationController@setContent');
 Route::post('/invitation/create', 'InvitationController@store');
+Route::post('/invitation/response', 'InvitationController@response');
 Route::delete('/invitation/{id}', 'InvitationController@delete');

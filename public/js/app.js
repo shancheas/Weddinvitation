@@ -2296,7 +2296,8 @@ __webpack_require__.r(__webpack_exports__);
     data: String,
     poster: String,
     name: String,
-    route: String
+    route: String,
+    url: String
   },
   data: function data() {
     return {
@@ -2467,6 +2468,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2476,12 +2485,14 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       description: "Image poster for card"
     },
-    data: Object
+    data: Object,
+    url: String
   },
   data: function data() {
     return {
       modals: {
-        deleteAlert: false
+        deleteAlert: false,
+        url: false
       },
       brideNames: ''
     };
@@ -2489,6 +2500,9 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     getBrideNames: function getBrideNames() {
       return "".concat(this.data.bridegroom, " & ").concat(this.data.bride);
+    },
+    getInvitationUri: function getInvitationUri() {
+      return "".concat(this.url, "/invitation/").concat(this.data.bridegroom.toLowerCase(), "-dan-").concat(this.data.bride.toLocaleLowerCase());
     }
   },
   methods: {
@@ -2502,6 +2516,13 @@ __webpack_require__.r(__webpack_exports__);
 
         _this.$emit('onDelete', invitationId);
       });
+    },
+    copyTextToClipboard: function copyTextToClipboard() {
+      var copyText = document.getElementById("inv-url");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      this.modals.url = false;
     }
   },
   components: {
@@ -42285,7 +42306,11 @@ var render = function() {
                   { key: invitation.id, staticClass: "col-lg-3" },
                   [
                     _c("invitation-card", {
-                      attrs: { poster: _vm.poster, data: invitation },
+                      attrs: {
+                        poster: _vm.poster,
+                        data: invitation,
+                        url: _vm.url
+                      },
                       on: { onDelete: _vm.onDelete }
                     })
                   ],
@@ -42459,7 +42484,15 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "a",
-                    { staticClass: "dropdown-item", attrs: { href: "#" } },
+                    {
+                      staticClass: "dropdown-item",
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          _vm.modals.url = true
+                        }
+                      }
+                    },
                     [
                       _c("i", { staticClass: "ni ni-send text-blue" }),
                       _vm._v(" Bagikan\n                    ")
@@ -42526,7 +42559,14 @@ var render = function() {
           _vm._v(_vm._s(_vm.getBrideNames))
         ]),
         _vm._v(" "),
-        _vm._m(0),
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-primary btn-sm",
+            attrs: { href: _vm.getInvitationUri, target: "_blank" }
+          },
+          [_c("i", { staticClass: "fa fa-eye" }), _vm._v(" Lihat\n        ")]
+        ),
         _vm._v(" "),
         _c(
           "a",
@@ -42534,7 +42574,7 @@ var render = function() {
             staticClass: "btn btn-icon btn-2 btn-danger btn-sm",
             attrs: { href: "details/" + _vm.data.id }
           },
-          [_vm._m(1)]
+          [_vm._m(0)]
         )
       ]),
       _vm._v(" "),
@@ -42592,22 +42632,61 @@ var render = function() {
           )
         ],
         2
+      ),
+      _vm._v(" "),
+      _c(
+        "modal",
+        {
+          attrs: { show: _vm.modals.url },
+          on: {
+            "update:show": function($event) {
+              return _vm.$set(_vm.modals, "url", $event)
+            }
+          }
+        },
+        [
+          _c(
+            "div",
+            [
+              _c("base-input", {
+                attrs: {
+                  placeholder: "url",
+                  id: "inv-url",
+                  value: _vm.getInvitationUri,
+                  "addon-right-icon": "fas fa-link"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "template",
+            { slot: "footer" },
+            [
+              _c(
+                "base-button",
+                {
+                  attrs: { type: "secondary" },
+                  on: {
+                    click: function($event) {
+                      _vm.modals.url = false
+                    }
+                  }
+                },
+                [_vm._v("Copy")]
+              )
+            ],
+            1
+          )
+        ],
+        2
       )
     ],
     1
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "btn btn-primary btn-sm", attrs: { href: "#" } },
-      [_c("i", { staticClass: "fa fa-eye" }), _vm._v(" Lihat\n        ")]
-    )
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

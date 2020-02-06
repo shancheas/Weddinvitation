@@ -68,4 +68,28 @@ class InvitationController extends Controller
         $invitation->content = $request->htmlContent;
         $invitation->save();
     }
+
+    public function invitation($uri)
+    {
+        $params = explode("-", $uri);
+        $invitation = $this->invitation->where('bridegroom', $params[0])->where('bride', $params[2]);
+        $invitation = $invitation->get()->first();
+
+        $content = $invitation->content;
+        $data = [
+            'id' => $invitation->id,
+            'lat' => $invitation->latitude,
+            'lng' => $invitation->longitude,
+        ];
+        return view('users.invitation.container', compact('content', 'data'));
+    }
+
+    public function response(Request $request)
+    {
+        $this->invitationResponse->create($request->all());
+        return response([
+            'code' => 1,
+            'message' => 'Pesan anda telah disampaikan pada calon pengantin, Terima Kasih'
+        ]);
+    }
 }

@@ -7,6 +7,7 @@
         @if($invitation->count() > 0)
         <dashboard data="{{ json_encode($invitation) }}"
                    poster="{{ asset('argon') }}/img/brand/sample.png"
+                   url="{{ url('/') }}"
                    name="{{ auth()->user()->name }}"
                    route="{{ route('templates') }}"/>
         @else

@@ -13,7 +13,7 @@
             <div class="col-lg-12">
                 <div class="row row-grid">
                     <div class="col-lg-3" v-for="invitation in invitations" :key="invitation.id">
-                        <invitation-card :poster="poster" :data="invitation" @onDelete="onDelete"/>
+                        <invitation-card :poster="poster" :data="invitation" @onDelete="onDelete" :url="url"/>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,8 @@
             data: String,
             poster: String,
             name: String,
-            route: String
+            route: String,
+            url: String
         },
         data() {
             return {
