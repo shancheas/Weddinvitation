@@ -41,6 +41,7 @@
 
         <script src="{{ asset('argon') }}/vendor/jquery/dist/jquery.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
         <script src="{{ asset('argon') }}/vendor/grapesjs/grapes.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/grapesjs/grapesjs-preset-webpage.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/grapesjs/grapesjs-preset-newsletter.min.js"></script>

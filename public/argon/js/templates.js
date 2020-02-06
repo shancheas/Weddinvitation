@@ -376,7 +376,12 @@ $('#btn-save').click(() => {
     $.post(`/api/invitation/content/${userId}`, {
         htmlContent: htmlContent
     }).then(response => {
-        console.log(response)
+        Swal.fire({
+            icon: 'success',
+            title: '',
+            text: 'Template berhasil di simpan!',
+            footer: '<a href="/home">Kembali ke dashboard</a>'
+        })
     })
 });
 
