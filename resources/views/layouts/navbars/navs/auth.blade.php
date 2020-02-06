@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <!-- Brand -->
         <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="{{ route('home') }}">
-            <img src="{{ asset('argon') }}/img/brand/logo.png">
+            <img src="{{ asset('argon') }}/img/brand/logo.png" height="200">
         </a>
         <a class="h4 mb-0 text-uppercase text-white mr-3 d-none d-md-flex ml-lg-auto" href="{{ route('home') }}">{{ __('Dashboard') }}</a>
         <!-- Form -->
@@ -18,7 +18,6 @@
                 </div>
             </div>
         </form>
-        --}}
         <!-- User -->
         <ul class="navbar-nav align-items-center d-none d-md-flex">
             <li class="nav-item dropdown">
@@ -40,20 +39,6 @@
                         <i class="ni ni-single-02"></i>
                         <span>{{ __('My profile') }}</span>
                     </a>
-                    {{--
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-settings-gear-65"></i>
-                        <span>{{ __('Settings') }}</span>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-calendar-grid-58"></i>
-                        <span>{{ __('Activity') }}</span>
-                    </a>
-                    <a href="#" class="dropdown-item">
-                        <i class="ni ni-support-16"></i>
-                        <span>{{ __('Support') }}</span>
-                    </a>
-                    --}}
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -63,5 +48,6 @@
                 </div>
             </li>
         </ul>
+        --}}
     </div>
 </nav>

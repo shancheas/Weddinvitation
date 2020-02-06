@@ -7,6 +7,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+import * as VueGoogleMaps from 'vue2-google-maps'
+import Vuelidate from 'vuelidate'
+import clickOutside from 'vue-click-outside'
 
 /**
  * The following block of code may be used to automatically register your
@@ -16,10 +19,19 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
+const files = require.context('./', true, /\.vue$/i);
+Vue.use(Vuelidate);
+Vue.use(VueGoogleMaps, {
+    load: {
+        key: 'AIzaSyBaWG5cfOZH_-sRh1r3YJMTH9a3BSMtssg',
+        libraries: 'places',
+    },
+    installComponents: true
+});
+Vue.directive("click-outside", clickOutside);
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -43,8 +43,8 @@
                 </div>
             </div>
             <div class="col-xl-4">
-                <a class="navbar-brand" href="http://localhost:8000/home">
-                    <img src="http://localhost:8000/argon/img/brand/logo.png">
+                <a class="navbar-brand" href="{{ route('home') }}">
+                    <img src="{{ asset('argon') }}/img/brand/logo.png" style="height: 150px" />
                 </a>
             </div>
 

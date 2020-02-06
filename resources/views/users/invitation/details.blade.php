@@ -1,7 +1,7 @@
 @extends('layouts.app', ['title' => __('User Profile')])
 
 @section('content')
-@include('users.partials.details_header')
+@include('users.partials.details_header', ['brideNames' => $invitation->bridegroom . ' & ' . $invitation->bride])
 
 <div class="container-fluid mt--7">
     <div class="row mb-4">
@@ -11,19 +11,19 @@
                     <div class="row">
                         <div class="col">
                             <h5 class="card-title text-uppercase text-muted mb-0">Kehadiran</h5>
-                            <span class="h2 font-weight-bold mb-0">350</span>
+                            <span class="h2 font-weight-bold mb-0">{{ $attend['total'] }}</span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                <i class="fas fa-chart-bar"></i>
+                                <i class="fas fa-chart-pie"></i>
                             </div>
                         </div>
                     </div>
                     <div>
-                        <canvas id="chart-area" width="300" height="300"></canvas>
+                        <canvas id="chart-area" width="300" height="350"></canvas>
                     </div>
                     <p class="mt-3 mb-0 text-muted text-sm">
-                        <span class="text-success mr-2"><i class="fa fa-check"></i> 83.48%</span>
+                        <span class="{{ $attend['color'] }} mr-2"><i class="fa fa-check"></i> {{ $attend['percentage'] }}%</span>
                         <span class="text-nowrap">Orang akan hadir</span>
                     </p>
                 </div>
@@ -34,17 +34,20 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
-                            <span class="h2 font-weight-bold mb-0">2,356</span>
+                            <h5 class="card-title text-uppercase text-muted mb-0">Undangan dilihat</h5>
+                            <span class="h2 font-weight-bold mb-0">0</span>
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                <i class="fas fa-chart-pie"></i>
+                                <i class="fas fa-chart-bar"></i>
                             </div>
                         </div>
                     </div>
+                    <div class="chart">
+                        <canvas id="chart-sosmed" class="chart-canvas" width="300" height="350"></canvas>
+                    </div>
                     <p class="mt-3 mb-0 text-muted text-sm">
-                        <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
+                        <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 0%</span>
                         <span class="text-nowrap">Since last week</span>
                     </p>
                 </div>
@@ -52,7 +55,7 @@
         </div>
     </div>
 
-    @include('users/partials/guest_note')
+    @include('users/partials/guest_note', $details)
 </div>
 @endsection
 
@@ -65,7 +68,7 @@
         type: 'pie',
         data: {
             datasets: [{
-                data: [13, 77, 10],
+                data: [{{ $attend['not'] }}, {{ $attend['will'] }}, {{ $attend['maybe'] }}],
                 backgroundColor: [
                     '#fd5e53',
                     '#21bf73',
@@ -87,9 +90,67 @@
         }
     };
 
+
+    // Init chart
+    function initChart($chart) {
+
+        // Create chart
+        var ordersChart = new Chart($chart, {
+            type: 'bar',
+            options: {
+                scales: {
+                    yAxes: [{
+                        gridLines: {
+                            lineWidth: 1,
+                            color: '#dfe2e6',
+                            zeroLineColor: '#dfe2e6'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                if (!(value % 10)) {
+                                    //return '$' + value + 'k'
+                                    return value
+                                }
+                            }
+                        }
+                    }]
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function(item, data) {
+                            var label = data.datasets[item.datasetIndex].label || '';
+                            var yLabel = item.yLabel;
+                            var content = '';
+
+                            if (data.datasets.length > 1) {
+                                content += '<span class="popover-body-label mr-auto">' + label + '</span>';
+                            }
+
+                            content += '<span class="popover-body-value">' + yLabel + '</span>';
+
+                            return content;
+                        }
+                    }
+                }
+            },
+            data: {
+                labels: ['Facebook', 'Instagram', 'WhatsApp', 'Twiter', 'Lain-lain'],
+                datasets: [{
+                    label: 'Sosial Media',
+                    data: [0, 0, 0, 0, 0]
+                }]
+            }
+        });
+
+        // Save to jQuery object
+        $chart.data('chart', ordersChart);
+    }
+
     window.onload = function () {
         var ctx = $('#chart-area');
         new Chart(ctx, config);
+        var $chart = $('#chart-sosmed');
+        initChart($chart)
     };
 </script>
 @endpush
