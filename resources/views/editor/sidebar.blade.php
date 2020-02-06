@@ -1,4 +1,4 @@
-<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-dark" id="sidenav-main">
+<nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light" style="background-color: #463a3c !important;" id="sidenav-main">
     <div class="container-fluid">
         <!-- Brand -->
         <a class="navbar-brand pt-0" href="{{ url('/') }}">
@@ -10,30 +10,19 @@
             <div class="row justify-content-center">
                 <div class="col-lg-12">
                     <div class="row row-grid">
+                        @foreach($themes as $theme)
                         <div class="col-md-12 pb-3">
-                            <div class="card bg-white card-lift--hover shadow border-0">
+                            <div class="card bg-white shadow border-0" style="cursor: pointer">
                                 <div class="card-img-cover">
-                                    <img src="{{ asset('argon') }}/img/brand/sample.png"
-                                        class="card-img-top" alt="first">
+                                    <a href="#" class="sidebar-theme">
+                                        <img src="{{ $theme->thumbnail }}"
+                                             data-template="{{ $theme->path }}"
+                                             class="card-img-top" alt="first">
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 pb-3">
-                            <div class="card bg-white card-lift--hover shadow border-0">
-                                <div class="card-img-cover">
-                                    <img src="{{ asset('argon') }}/img/brand/theme2.png"
-                                        class="card-img-top" alt="first">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 pb-3">
-                            <div class="card bg-white card-lift--hover shadow border-0">
-                                <div class="card-img-cover">
-                                    <img src="{{ asset('argon') }}/img/brand/theme3.png"
-                                        class="card-img-top" alt="first">
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

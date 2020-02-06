@@ -42,6 +42,7 @@
         <script src="{{ asset('argon') }}/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/grapesjs/grapes.min.js"></script>
         <script src="{{ asset('argon') }}/vendor/grapesjs/grapesjs-preset-webpage.min.js"></script>
+        <script src="{{ asset('argon') }}/vendor/grapesjs/grapesjs-preset-newsletter.min.js"></script>
 <!--        <script src="{{ asset('argon') }}/vendor/grapesjs/grapesjs-lory-slider.min.js?0.1.5"></script>-->
 <!--        <script src="{{ asset('argon') }}/vendor/grapesjs/grapesjs-tabs.min.js?0.1.1"></script>-->
 <!--        <script src="{{ asset('argon') }}/vendor/grapesjs/grapesjs-custom-code.min.js?0.1.2"></script>-->

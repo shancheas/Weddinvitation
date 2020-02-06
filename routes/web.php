@@ -26,12 +26,10 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
 
     Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/details', 'HomeController@details')->name('details');
-    Route::get('/editor', 'HomeController@editor')->name('editor');
+    Route::get('/details/{id}', 'HomeController@details')->name('details');
+    Route::get('/editor/{id}', 'TemplateController@editor')->name('editor');
 
-    Route::get('templates', function () {
-        return view('users/invitation/templates');
-    })->name('templates');
+    Route::get('templates', 'TemplateController@form')->name('templates');
 
     Route::get('templates_one', function () {
         return view('users/invitation/theme_one');

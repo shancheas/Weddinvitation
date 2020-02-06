@@ -4,8 +4,8 @@
     <div class="container-fluid d-flex align-items-center">
         <div class="row">
             <div class="col-lg-7 col-md-10">
-                <h1 class="display-2 text-white">Ratna & Galih</h1>
-                <p class="mb-8"></p>
+                <h1 class="display-2 text-white">{{ $brideNames }}</h1>
+                <p class="mb-3"></p>
             </div>
         </div>
     </div>

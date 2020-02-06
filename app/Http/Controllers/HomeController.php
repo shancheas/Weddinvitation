@@ -7,10 +7,11 @@ use App\Entity\Invitation;
 class HomeController extends Controller
 {
     private $invitation;
+
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @param Invitation $invitation
      */
     public function __construct(Invitation $invitation)
     {
@@ -25,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $invitation = $this->invitation->all();
+        $invitation = $this->invitation->userInvitation(auth()->user()->id)->get();
         return view('users/dashboard', compact('invitation'));
     }
 
@@ -34,18 +35,22 @@ class HomeController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function details()
+    public function details($id)
     {
-        return view('users/invitation/details');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function editor()
-    {
-        return view('editor/editor');
+        $invitation = $this->invitation->find($id);
+        $details = $invitation->details;
+        $attendRaw = $details->countBy(function ($detail) {
+           return $detail->response;
+        });
+        $attend = [
+            'not' => isset($attendRaw[0]) ? $attendRaw[0] : 0,
+            'will' => isset($attendRaw[1]) ? $attendRaw[1] : 0,
+            'maybe' => isset($attendRaw[2]) ? $attendRaw[2] : 0,
+        ];
+        $attend['total'] = $attend['not'] + $attend['will'] + $attend['maybe'];
+        $attend['percentage'] = $attend['total'] ? round($attend['will'] / $attend['total'], 4) * 100 : 0;
+        $attend['color'] = $attend['percentage'] >= 0.5 ? 'text-success' : 'text-danger';
+        $invitation = $this->invitation->find($id);
+        return view('users/invitation/details', compact('details', 'attend', 'invitation'));
     }
 }

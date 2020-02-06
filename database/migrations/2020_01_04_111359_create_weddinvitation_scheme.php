@@ -31,6 +31,7 @@ class CreateWeddinvitationScheme extends Migration
             $table->string('address');
             $table->longText('longitude');
             $table->longText('latitude');
+            $table->longText('content')->nullable();
             $table->dateTime('date');
 
             $table->foreign('user_id')

@@ -1,13 +1,14 @@
-const editor = grapesjs.init({
+const editorOption = {
     // Indicate where to init the editor. You can also pass an HTMLElement
     container: '#editor',
-    height: '1000px',
+    height: '950px',
     fromElement: true,
     showOffsets: true,
     avoidInlineStyle: true,
     storageManager: false,
     plugins: [
         'gjs-preset-webpage',
+        'gjs-preset-newsletter'
     ],
     pluginsOpts: {
         'gjs-preset-webpage': {
@@ -318,15 +319,64 @@ const editor = grapesjs.init({
     panels: {
         defaults: []
     },
+};
+
+let editor;
+let component;
+const editorInit = () => {
+    editor = grapesjs.init(editorOption);
+    component = editor.DomComponents;
+    // Commands
+    editor.Commands.add('set-device-desktop', {
+        run: editor => editor.setDevice('Desktop')
+    });
+    editor.Commands.add('set-device-tablet', {
+        run: editor => editor.setDevice('Tablet')
+    });
+    editor.Commands.add('set-device-mobile', {
+        run: editor => editor.setDevice('Mobile portrait')
+    });
+};
+
+const editorClear = () => {
+    editor.DomComponents.clear(); // Clear components
+    editor.UndoManager.clear();
+};
+
+const editorReInit = (element) => {
+    editorClear();
+    editor.setComponents(element);
+    getUserInformation(7)
+};
+
+$('.sidebar-theme').on('click', (ev) => {
+    $this = $(ev.target);
+    const templateUri = $this.data('template');
+    $.get(templateUri).then(response => {
+        editorReInit(response)
+    })
 });
 
-// Commands
-editor.Commands.add('set-device-desktop', {
-    run: editor => editor.setDevice('Desktop')
+const getUserInformation = (id) => {
+  $.get(`/api/invitation/${id}`).then(response => {
+      console.log(response)
+      const brideName = `${response.bridegroom} & ${response.bride}`
+      const location = `${response.places}, ${response.address}`
+      const datetime = response.date
+      console.log(component.getComponents());
+      $('#bride-name').html(brideName)
+      $('#location').html(location)
+      $('#datettime').html(datetime)
+  })
+};
+
+$('#btn-save').click(() => {
+    const htmlContent = editor.runCommand('gjs-get-inlined-html');
+    $.post(`/api/invitation/content/7`, {
+        htmlContent: htmlContent
+    }).then(response => {
+        console.log(response)
+    })
 });
-editor.Commands.add('set-device-tablet', {
-    run: editor => editor.setDevice('Tablet')
-});
-editor.Commands.add('set-device-mobile', {
-    run: editor => editor.setDevice('Mobile portrait')
-});
+
+editorInit();
