@@ -323,6 +323,7 @@ const editorOption = {
 
 let editor;
 let component;
+const userId = $('#inv-id').val();
 const editorInit = () => {
     editor = grapesjs.init(editorOption);
     component = editor.DomComponents;
@@ -346,7 +347,7 @@ const editorClear = () => {
 const editorReInit = (element) => {
     editorClear();
     editor.setComponents(element);
-    getUserInformation(7)
+    getUserInformation(userId)
 };
 
 $('.sidebar-theme').on('click', (ev) => {
@@ -372,7 +373,7 @@ const getUserInformation = (id) => {
 
 $('#btn-save').click(() => {
     const htmlContent = editor.runCommand('gjs-get-inlined-html');
-    $.post(`/api/invitation/content/7`, {
+    $.post(`/api/invitation/content/${userId}`, {
         htmlContent: htmlContent
     }).then(response => {
         console.log(response)

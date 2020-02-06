@@ -30,6 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/editor/{id}', 'TemplateController@editor')->name('editor');
 
     Route::get('templates', 'TemplateController@form')->name('templates');
+    Route::get('invitation/{uri}', 'InvitationController@invitation');
 
     Route::get('templates_one', function () {
         return view('users/invitation/theme_one');
